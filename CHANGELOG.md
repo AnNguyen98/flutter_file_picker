@@ -1,4 +1,7 @@
-### Package fork from <https://pub.dev/packages/file_picker>
+### 1.0.6
+
+Package fork from <https://pub.dev/packages/file_picker>
+Auto convert live photo to jpeg and remove loading when saving images to cache
 
 ## 4.4.0
 
