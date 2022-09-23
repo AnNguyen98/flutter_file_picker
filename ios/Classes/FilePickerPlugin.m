@@ -212,20 +212,20 @@
 - (void) resolveMultiPickFromGallery:(MediaType)type withCompressionAllowed:(BOOL)allowCompression {
     DKImagePickerController * dkImagePickerController = [[DKImagePickerController alloc] init];
     
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    UIActivityIndicatorView* indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    // UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    // UIActivityIndicatorView* indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
     
     UIViewController *currentViewController = [self viewControllerWithWindow:nil];
     if(_eventSink == nil) {
         // Create alert dialog for asset caching
-        [alert.view setCenter: currentViewController.view.center];
-        [alert.view addConstraint: [NSLayoutConstraint constraintWithItem:alert.view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:100]];
+        // [alert.view setCenter: currentViewController.view.center];
+        // [alert.view addConstraint: [NSLayoutConstraint constraintWithItem:alert.view attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:100]];
         
         // Create a default loader if user don't provide a status handler
-        indicator.hidesWhenStopped = YES;
-        [indicator setCenter: alert.view.center];
-        indicator.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin);
-        [alert.view addSubview: indicator];
+        // indicator.hidesWhenStopped = YES;
+        // [indicator setCenter: alert.view.center];
+        // indicator.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin);
+        // [alert.view addSubview: indicator];
     }
     
     if (@available(iOS 11.0, *)) {
@@ -249,16 +249,16 @@
             if(self->_eventSink != nil){
                 self->_eventSink([NSNumber numberWithBool:YES]);
             } else {
-                [indicator startAnimating];
-                [currentViewController showViewController:alert sender:nil];
+                // [indicator startAnimating];
+                // [currentViewController showViewController:alert sender:nil];
             }
             
         } else {
             if(self->_eventSink != nil) {
                 self->_eventSink([NSNumber numberWithBool:NO]);
             } else {
-                [indicator stopAnimating];
-                [alert dismissViewControllerAnimated:YES completion:nil];
+                // [indicator stopAnimating];
+                // [alert dismissViewControllerAnimated:YES completion:nil];
             }
             
         }
@@ -436,7 +436,7 @@ didPickDocumentsAtURLs:(NSArray<NSURL *> *)urls{
             NSURL * cachedUrl;
             
             // Check for live photos
-            if(self.allowCompression && [extension isEqualToString:@"pvt"]) {
+            if([extension isEqualToString:@"pvt"]) {
                 NSArray * files = [fileManager contentsOfDirectoryAtURL:url includingPropertiesForKeys:@[] options:NSDirectoryEnumerationSkipsHiddenFiles error:nil];
                 
                 for (NSURL * item in files) {
