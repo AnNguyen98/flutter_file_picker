@@ -16,7 +16,6 @@
   </a>
   <img src="https://img.shields.io/github/license/AnNguyen98/flutter_file_picker">
   <a href="https://github.com/AnNguyen98/flutter_file_picker/actions/workflows/main.yml">
-    <img alt="CI pipeline status" src="https://github.com/AnNguyen98/flutter_file_picker/actions/workflows/main.yml/badge.svg">
   </a>
 </p>
 
