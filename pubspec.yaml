@@ -3,7 +3,7 @@ description: This package fork from https://pub.dev/packages/file_picker
 homepage: https://github.com/AnNguyen98/flutter_file_picker
 repository: https://github.com/AnNguyen98/flutter_file_picker
 issue_tracker: https://github.com/AnNguyen98/flutter_file_picker/issues
-version: 1.0.9
+version: 1.1.0
 
 dependencies:
   flutter:
