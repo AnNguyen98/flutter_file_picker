@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:file_picker/src/file_picker_io.dart';
-import 'package:file_picker/src/file_picker_macos.dart';
-import 'package:file_picker/src/file_picker_result.dart';
-import 'package:file_picker/src/linux/file_picker_linux.dart';
-import 'package:file_picker/src/windows/stub.dart'
-    if (dart.library.io) 'package:file_picker/src/windows/file_picker_windows.dart';
+import 'package:file_picker_af/src/file_picker_io.dart';
+import 'package:file_picker_af/src/file_picker_macos.dart';
+import 'package:file_picker_af/src/file_picker_result.dart';
+import 'package:file_picker_af/src/linux/file_picker_linux.dart';
+import 'package:file_picker_af/src/windows/stub.dart'
+    if (dart.library.io) 'package:file_picker_af/src/windows/file_picker_windows.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 const String defaultDialogTitle = 'File Picker';
@@ -25,9 +25,9 @@ enum FilePickerStatus {
   done,
 }
 
-/// The interface that implementations of file_picker must implement.
+/// The interface that implementations of file_picker_af must implement.
 ///
-/// Platform implementations should extend this class rather than implement it as `file_picker`
+/// Platform implementations should extend this class rather than implement it as `file_picker_af`
 /// does not consider newly added methods to be breaking changes. Extending this class
 /// (using `extends`) ensures that the subclass will get the default implementation, while
 /// platform implementations that `implements` this interface will be broken by newly added
@@ -95,7 +95,7 @@ abstract class FilePicker extends PlatformInterface {
   /// The result is wrapped in a [FilePickerResult] which contains helper getters
   /// with useful information regarding the picked [List<PlatformFile>].
   ///
-  /// For more information, check the [API documentation](https://github.com/miguelpruivo/flutter_file_picker/wiki/api).
+  /// For more information, check the [API documentation](https://github.com/AnNguyen98/flutter_file_picker_af/wiki/api).
   ///
   /// Returns `null` if aborted.
   Future<FilePickerResult?> pickFiles({

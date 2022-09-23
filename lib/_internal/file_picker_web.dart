@@ -2,12 +2,12 @@ import 'dart:async';
 import 'dart:html';
 import 'dart:typed_data';
 
-import 'package:file_picker/file_picker.dart';
+import 'package:file_picker_af/file_picker.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 
 class FilePickerWeb extends FilePicker {
   late Element _target;
-  final String _kFilePickerInputsDomId = '__file_picker_web-file-input';
+  final String _kFilePickerInputsDomId = '__file_picker_af_web-file-input';
 
   final int _readStreamChunkSize = 1000 * 1000; // 1 MB
 

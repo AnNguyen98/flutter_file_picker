@@ -1,9 +1,9 @@
-name: file_picker_example
-description: An example of how to use the file_picker plugin.
+name: file_picker_af_example
+description: An example of how to use the file_picker_af plugin.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
@@ -15,7 +15,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  file_picker:
+  file_picker_af:
     path: ../
 
 flutter:

@@ -12,18 +12,20 @@
  <a href="https://www.buymeacoffee.com/gQyz2MR">
     <img alt="Buy me a coffee" src="https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-yellow.svg">
   </a>
-  <a href="https://github.com/miguelpruivo/flutter_file_picker/issues"><img src="https://img.shields.io/github/issues/miguelpruivo/flutter_file_picker">
+  <a href="https://github.com/AnNguyen98/flutter_file_picker/issues"><img src="https://img.shields.io/github/issues/AnNguyen98/flutter_file_picker">
   </a>
-  <img src="https://img.shields.io/github/license/miguelpruivo/flutter_file_picker">
-  <a href="https://github.com/miguelpruivo/flutter_file_picker/actions/workflows/main.yml">
-    <img alt="CI pipeline status" src="https://github.com/miguelpruivo/flutter_file_picker/actions/workflows/main.yml/badge.svg">
+  <img src="https://img.shields.io/github/license/AnNguyen98/flutter_file_picker">
+  <a href="https://github.com/AnNguyen98/flutter_file_picker/actions/workflows/main.yml">
+    <img alt="CI pipeline status" src="https://github.com/AnNguyen98/flutter_file_picker/actions/workflows/main.yml/badge.svg">
   </a>
 </p>
 
 # File Picker
+
 A package that allows you to use the native file explorer to pick single or multiple files, with extensions filtering support.
 
 ## Currently supported features
+
 * Uses OS default native pickers
 * Supports multiple platforms (Mobile, Web, Desktop and Flutter GO)
 * Pick files using  **custom format** filtering — you can provide a list of file extensions (pdf, svg, zip, etc.)
@@ -31,33 +33,36 @@ A package that allows you to use the native file explorer to pick single or mult
 * Single or multiple file picks
 * Different default type filtering (media, image, video, audio or any)
 * Picking directories
-* Load file data immediately into memory (`Uint8List`) if needed; 
+* Load file data immediately into memory (`Uint8List`) if needed;
 * Open a save-file / save-as dialog (a dialog that lets the user specify the drive, directory, and name of a file to save)
 
 If you have any feature that you want to see in this package, please feel free to issue a suggestion. 🎉
 
 ## Documentation
-See the **[File Picker Wiki](https://github.com/miguelpruivo/flutter_file_picker/wiki)** for every detail on about how to install, setup and use it.
+
+See the **[File Picker Wiki](https://github.com/AnNguyen98/flutter_file_picker/wiki)** for every detail on about how to install, setup and use it.
 
 ### File Picker Wiki
 
-1. [Installation](https://github.com/miguelpruivo/plugins_flutter_file_picker/wiki/Installation)
-2. [Setup](https://github.com/miguelpruivo/plugins_flutter_file_picker/wiki/Setup)
-   * [Android](https://github.com/miguelpruivo/plugins_flutter_file_picker/wiki/Setup#android)
-   * [iOS](https://github.com/miguelpruivo/plugins_flutter_file_picker/wiki/Setup#ios)
-   * [Web](https://github.com/miguelpruivo/flutter_file_picker/wiki/Setup#--web)
-   * [Desktop (go-flutter)](https://github.com/miguelpruivo/plugins_flutter_file_picker/wiki/Setup/_edit#desktop-go-flutter)
-3. [API](https://github.com/miguelpruivo/plugins_flutter_file_picker/wiki/api)
-   * [Filters](https://github.com/miguelpruivo/plugins_flutter_file_picker/wiki/API#filters)
-   * [Parameters](https://github.com/miguelpruivo/flutter_file_picker/wiki/API#parameters)
-   * [Methods](https://github.com/miguelpruivo/plugins_flutter_file_picker/wiki/API#methods)
-4. [FAQ](https://github.com/miguelpruivo/flutter_file_picker/wiki/FAQ)
-5. [Troubleshooting](https://github.com/miguelpruivo/flutter_file_picker/wiki/Troubleshooting)
+1. [Installation](https://github.com/AnNguyen98/plugins_flutter_file_picker/wiki/Installation)
+2. [Setup](https://github.com/AnNguyen98/plugins_flutter_file_picker/wiki/Setup)
+   * [Android](https://github.com/AnNguyen98/plugins_flutter_file_picker/wiki/Setup#android)
+   * [iOS](https://github.com/AnNguyen98/plugins_flutter_file_picker/wiki/Setup#ios)
+   * [Web](https://github.com/AnNguyen98/flutter_file_picker/wiki/Setup#--web)
+   * [Desktop (go-flutter)](https://github.com/AnNguyen98/plugins_flutter_file_picker/wiki/Setup/_edit#desktop-go-flutter)
+3. [API](https://github.com/AnNguyen98/plugins_flutter_file_picker/wiki/api)
+   * [Filters](https://github.com/AnNguyen98/plugins_flutter_file_picker/wiki/API#filters)
+   * [Parameters](https://github.com/AnNguyen98/flutter_file_picker/wiki/API#parameters)
+   * [Methods](https://github.com/AnNguyen98/plugins_flutter_file_picker/wiki/API#methods)
+4. [FAQ](https://github.com/AnNguyen98/flutter_file_picker/wiki/FAQ)
+5. [Troubleshooting](https://github.com/AnNguyen98/flutter_file_picker/wiki/Troubleshooting)
 
 ## Usage
+
 Quick simple usage example:
 
 #### Single file
+
 ```dart
 FilePickerResult? result = await FilePicker.platform.pickFiles();
 
@@ -67,7 +72,9 @@ if (result != null) {
   // User canceled the picker
 }
 ```
+
 #### Multiple files
+
 ```dart
 FilePickerResult? result = await FilePicker.platform.pickFiles(allowMultiple: true);
 
@@ -77,14 +84,18 @@ if (result != null) {
   // User canceled the picker
 }
 ```
+
 #### Multiple files with extension filter
+
 ```dart
 FilePickerResult? result = await FilePicker.platform.pickFiles(
   type: FileType.custom,
   allowedExtensions: ['jpg', 'pdf', 'doc'],
 );
 ```
+
 #### Pick a directory
+
 ```dart
 String? selectedDirectory = await FilePicker.platform.getDirectoryPath();
 
@@ -92,7 +103,9 @@ if (selectedDirectory == null) {
   // User canceled the picker
 }
 ```
+
 #### Save-file / save-as dialog
+
 ```dart
 String? outputFile = await FilePicker.platform.saveFile(
   dialogTitle: 'Please select an output file:',
@@ -103,7 +116,9 @@ if (outputFile == null) {
   // User canceled the picker
 }
 ```
+
 ### Load result and file details
+
 ```dart
 FilePickerResult? result = await FilePicker.platform.pickFiles();
 
@@ -119,7 +134,9 @@ if (result != null) {
   // User canceled the picker
 }
 ```
+
 #### Pick and upload a file to Firebase Storage with Flutter Web
+
 ```dart
 FilePickerResult? result = await FilePicker.platform.pickFiles();
 
@@ -132,19 +149,29 @@ if (result != null) {
 }
 ```
 
-For full usage details refer to the **[Wiki](https://github.com/miguelpruivo/flutter_file_picker/wiki)** above.
+For full usage details refer to the **[Wiki](https://github.com/AnNguyen98/flutter_file_picker/wiki)** above.
 
 ## Example App
+
 #### Android
-![Demo](https://github.com/miguelpruivo/flutter_file_picker/blob/master/example/screenshots/example.gif)
+
+![Demo](https://github.com/AnNguyen98/flutter_file_picker/blob/master/example/screenshots/example.gif)
+
 #### iOS
-![DemoMultiFilters](https://github.com/miguelpruivo/flutter_file_picker/blob/master/example/screenshots/example_ios.gif)
+
+![DemoMultiFilters](https://github.com/AnNguyen98/flutter_file_picker/blob/master/example/screenshots/example_ios.gif)
+
 #### MacOS
-![DemoMacOS](https://github.com/miguelpruivo/flutter_file_picker/blob/master/example/screenshots/example_macos.png)
+
+![DemoMacOS](https://github.com/AnNguyen98/flutter_file_picker/blob/master/example/screenshots/example_macos.png)
+
 #### Linux
-![DemoLinux](https://github.com/miguelpruivo/flutter_file_picker/blob/master/example/screenshots/example_linux.png)
+
+![DemoLinux](https://github.com/AnNguyen98/flutter_file_picker/blob/master/example/screenshots/example_linux.png)
+
 #### Windows
-![DemoWindows](https://github.com/miguelpruivo/flutter_file_picker/blob/master/example/screenshots/example_windows.png)
+
+![DemoWindows](https://github.com/AnNguyen98/flutter_file_picker/blob/master/example/screenshots/example_windows.png)
 
 ## Getting Started
 
@@ -152,6 +179,3 @@ For help getting started with Flutter, view our online
 [documentation](https://flutter.io/).
 
 For help on editing plugin code, view the [documentation](https://flutter.io/platform-plugins/#edit-code).
-
-
-
