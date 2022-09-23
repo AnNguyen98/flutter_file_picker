@@ -1,8 +1,8 @@
 @TestOn('windows')
 
 import 'package:file_picker_af/src/exceptions.dart';
-import 'package:file_picker_af/src/file_picker_af.dart';
-import 'package:file_picker_af/src/windows/file_picker_af_windows.dart';
+import 'package:file_picker_af/src/file_picker.dart';
+import 'package:file_picker_af/src/windows/file_picker_windows.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

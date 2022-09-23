@@ -15,7 +15,6 @@ import android.webkit.MimeTypeMap;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -131,6 +130,7 @@ public class FileUtils {
         final String path = context.getCacheDir().getAbsolutePath() + "/file_picker/" + (fileName != null ? fileName : new Random().nextInt(100000));
 
         final File file = new File(path);
+
 
         if(!file.exists()) {
             file.getParentFile().mkdirs();

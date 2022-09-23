@@ -1,7 +1,7 @@
 @TestOn('mac-os')
 
-import 'package:file_picker_af/src/file_picker_af.dart';
-import 'package:file_picker_af/src/file_picker_af_macos.dart';
+import 'package:file_picker_af/src/file_picker.dart';
+import 'package:file_picker_af/src/file_picker_macos.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
